@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "Azure DevOps path filter editor",
+    "description": "View and edit path filters of branch policies easily",
+    "version": "1.0",
+    "author": "Lucas Loegel",
+    "content_scripts": [
+      {
+        "matches": ["https://dev.azure.com/*/_settings/repositories?_a=policiesMid*"],
+        "js": ["content.js"]
+      }
+    ],
+    "permissions": ["activeTab"]
+}

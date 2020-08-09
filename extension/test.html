@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <style>
+            .fabric-icon{align-self:center;display:inline-flex;font-family:"AzureDevOpsMDL2Assets";-webkit-font-smoothing:antialiased}
+            .flex-noshrink{flex-shrink:0}
+            .ms-Icon--View:before{content:"\e890 "}
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript" src="content.js"></script>
+        <script type="text/javascript">
+        function addElement(){
+            var content = document.getElementById("content");
+            var label = document.createElement("label");
+            label.textContent = "Path filter (optional)";
+            var input =document.createElement("input");
+            var container = document.createElement("div");
+            var inputContainer = document.createElement("div");
+            inputContainer.appendChild(input);
+            container.appendChild(label);
+            container.appendChild(inputContainer);
+            content.appendChild(container);
+        }
+        </script>
+        <button onclick="addElement()">Add</button>
+        <div id="content"></div>
+    </body>
+</html>
