@@ -46,7 +46,6 @@ function createButton(input) {
         container.appendChild(textList);
         container.appendChild(buttonContainer);
         document.getElementsByTagName("body")[0].appendChild(container);
-        // container.style.display = "float";
     }
     return button;
 }
@@ -65,10 +64,13 @@ function setNativeValue(element, value) {
     element.dispatchEvent(event);
 }
 
-//on init perform based on chrome stroage value
 window.onload=function(){  
     console.log("starting AzureDevOps path filter editor")
     var observer = new MutationObserver(function(mutations) {
+        if(!window.location.href.includes("/_settings/repositories?_a=policiesMid")) {
+            // not in the correct page
+            return;
+        }
         mutations.filter(function(mutation) { return mutation.type === "childList"; })
                  .forEach(function(mutation) {                    
                     mutation.addedNodes.forEach(function(node) {                  
